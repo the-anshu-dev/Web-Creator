@@ -1,0 +1,172 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    background: #333;
+}
+
+.box
+{
+    position: relative;
+    min-width: 425px;
+    top: 10%;
+    background: #00d4a6;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 35px 50px rgba(0,0,0,0.1);
+}
+
+.box::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 75px);
+    height: 100%;
+    background: #999;
+    border-radius: 0 10px 10px 0;
+}
+
+img
+{
+    width: 100px;
+    height: 100px;
+}
+
+hr
+{
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    margin-left: 60px;
+}
+
+.box h3
+{
+    position: relative;
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding-left: 70px;
+}
+
+.box .list
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+
+.box .list::before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #00d4a6;
+    border-radius: 10px;
+    transition: transform .5s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+
+.box .list:hover::before
+{
+    
+    transition: transform .5s;
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.box .list .imgbx
+{
+    position: relative;
+    min-width: 70px;
+    height: 70px;
+    background: #00d4a6;
+    border-radius: 20%;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+
+.box .list .imgbx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box .list .content
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    color: #333;
+}
+
+
+.box .list .content .rank
+{
+    position: absolute;
+    right: 0;
+    font-size: 2em;
+    color: #1b02fc;
+    transform: scale(0);
+    transition: .5s;
+}
+
+
+
+.box .list:hover .content .rank small
+{
+    font-weight: 500;
+    opacity: .25;
+}
+
+
+.box .list:hover .content .rank
+{
+    transform: scale(1);
+}
+
+.box .list .content h4
+{
+    font-weight: 600;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.box .list .content p
+{
+    opacity: .85;
+    transition: 0.5s;
+}
+
+.box .list:hover .content h4,
+.box .list:hover .content p
+{
+    color: #ff0000;
+}
